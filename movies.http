@@ -1,0 +1,41 @@
+### página principal
+GET http://localhost:3000/ HTTP/1.1
+
+### página movies
+GET http://localhost:3000/movies HTTP/1.1
+
+### página id
+GET http://localhost:3000/movies/8fb17ae1-bdfe-45e5-a871-4772d7e526b8 HTTP/1.1
+
+### página query
+GET http://localhost:3000/movies?genre=Adventure HTTP/1.1
+
+### página no encontrada
+GET http://localhost:3000/sdadsadsa HTTP/1.1
+
+### crear una pelicula:
+POST http://localhost:3000/movies HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "The Lion King",
+    "year": 1994,
+    "director": "Roger Allers, Rob Minkoff",
+    "duration": 88,
+    "poster": "https://m.media-amazon.com/images/I/81BMmrwSFOL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Animation", "Adventure", "Drama"],
+    "rate": 8.5
+}
+
+
+### patch
+PATCH http://localhost:3000/movies/7e3fd5ab-60ff-4ae2-92b6-9597f0308d1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "year": 2021
+}
+
+
+###delete 
+DELETE http://localhost:3000/movies/241bf55d-b649-4109-af7c-0e6890ded3fc HTTP/1.1
